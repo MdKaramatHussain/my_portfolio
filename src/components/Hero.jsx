@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { styles } from '../style'
 import ComputerCanvas from './canvas/Computers'
+import { isWebGL2Available } from '@react-three/drei'
 
 const Hero = () => {
   return (
@@ -15,12 +16,12 @@ const Hero = () => {
           <p>I can develop web Application,<br className='sm:block hidden' /> mobile application and ios application</p>
         </div>
       </div>
-      <ComputerCanvas />
+      {isWebGL2Available ? <ComputerCanvas /> : null}
       <div className='absolute xs:bottom-[-5px] bottom-32 w-full flex justify-center items-center' >
         <a href='#about' >
           <div className='w-[30px] h-[61px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
             <motion.div
-            // <motion.dev
+              // <motion.dev
               animate={{
                 y: [0, 24, 0]
               }}
