@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'

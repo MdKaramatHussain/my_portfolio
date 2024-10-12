@@ -42,10 +42,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        With 2.5 years of experience as a Full Stack Software Developer and React Native Developer, I bring
+        With 2 years of experience as a Full Stack Software Developer and React Native Developer, I bring
         expertise in React.js, React Native, Redux, Next.js, Node.js, Express.js, AWS, MySQL, MongoDB,
         JavaScript, Html5, CSS, Bootstrap and Mui to the table. I am on the lookout for an exciting and
-        challenging role with a renowned IT organization, where I can not only contribute to the company's
+        challenging role with a renowned IT organization, where I can not only contribute to the company&apos;s
         growth but also continue my journey of exploration and learning. My proficiency extends to Git, GitHub
         and Docker. Let&apos;s embark on this exciting tech adventure together!
       </motion.p>

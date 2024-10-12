@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import { Suspense, useEffect, useState } from 'react'
 import CanvasLoader from '../Loader'
 
-const Computers = ({ isMobile }) => {
+const Computers = () => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   return (
     <mesh>
@@ -20,21 +20,27 @@ const Computers = ({ isMobile }) => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.65 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={ 0.75}
+        position={[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   )
 }
 
-// const Computers = () => {
-//   const computer = useGLTF('/desktop_pc/scene.gltf')
-//   if (!computer) return null; // Prevent rendering if model is not loaded
+// const Computers = ({ isMobile }) => {
+//   let computer = null
+//   try {
+//     computer = useGLTF('./desktop_pc/scene.gltf')
+//   } catch (error) {
+//     console.error("Error loading GLTF model:", error)
+//   }
+//   if (!computer) return <CanvasLoader />; // Fallback if loading fails
+
 //   return (
 //     <mesh>
-//       <hemisphereLight intensity={0.15} groundColor="black" />
-//       <pointLight intensity={2} />
+//       <hemisphereLight intensity={4} groundColor="black" />
+//       <pointLight intensity={1} />
 //       <spotLight
 //         position={[-20, 50, 10]}
 //         angle={0.12}
@@ -45,13 +51,14 @@ const Computers = ({ isMobile }) => {
 //       />
 //       <primitive
 //         object={computer.scene}
-//         scale={0.7}
-//         position={[0, -3.25, -1.5]}
+//         scale={isMobile ? 0.65 : 0.75}
+//         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
 //         rotation={[-0.01, -0.2, -0.1]}
 //       />
 //     </mesh>
 //   )
 // }
+
 
 const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false)
