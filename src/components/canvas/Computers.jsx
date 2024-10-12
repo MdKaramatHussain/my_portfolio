@@ -1,7 +1,8 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
-import { Suspense, useEffect, useState } from 'react'
+import { memo, Suspense, useEffect, useState } from 'react'
 import CanvasLoader from '../Loader'
 
 const Computers = () => {
@@ -60,33 +61,29 @@ const Computers = () => {
 // }
 
 
-const ComputerCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false)
+const ComputerCanvas = memo(() => {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    //Add a Listner for changes to the screen
     const mediaQuery = window.matchMedia('(max-width:500px)');
-    //set initial value of isMobile
     setIsMobile(mediaQuery.matches);
-    //define a callback func to handle changes to the media querry
     const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches)
-    }
-    // Add the callback function as a listner for changes to the media query
-    mediaQuery.addEventListener('change', handleMediaQueryChange)
-    //Remove the listner when the component is unmounted
+      setIsMobile(event.matches);
+    };
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
     return () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <Canvas
-      frameLoop='demand'
+      frameLoop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<CanvasLoader />} >
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
@@ -96,7 +93,48 @@ const ComputerCanvas = () => {
       </Suspense>
       <Preload all />
     </Canvas>
-  )
-}
+  );
+});
+
+
+
+// const ComputerCanvas = () => {
+//   const [isMobile, setIsMobile] = useState(false)
+//   useEffect(() => {
+//     //Add a Listner for changes to the screen
+//     const mediaQuery = window.matchMedia('(max-width:500px)');
+//     //set initial value of isMobile
+//     setIsMobile(mediaQuery.matches);
+//     //define a callback func to handle changes to the media querry
+//     const handleMediaQueryChange = (event) => {
+//       setIsMobile(event.matches)
+//     }
+//     // Add the callback function as a listner for changes to the media query
+//     mediaQuery.addEventListener('change', handleMediaQueryChange)
+//     //Remove the listner when the component is unmounted
+//     return () => {
+//       mediaQuery.removeEventListener('change', handleMediaQueryChange);
+//     }
+//   }, [])
+
+//   return (
+//     <Canvas
+//       frameLoop='demand'
+//       shadows
+//       camera={{ position: [20, 3, 5], fov: 25 }}
+//       gl={{ preserveDrawingBuffer: true }}
+//     >
+//       <Suspense fallback={<CanvasLoader />} >
+//         <OrbitControls
+//           enableZoom={false}
+//           maxPolarAngle={Math.PI / 2}
+//           minPolarAngle={Math.PI / 2}
+//         />
+//         <Computers isMobile={isMobile} />
+//       </Suspense>
+//       <Preload all />
+//     </Canvas>
+//   )
+// }
 
 export default ComputerCanvas
