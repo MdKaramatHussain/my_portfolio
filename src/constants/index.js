@@ -101,10 +101,10 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Next JS",
-    icon: nextjs,
-  },
+  // {
+  //   name: "Next JS",
+  //   icon: nextjs,
+  // },
   // {
   //   name: "git",
   //   icon: git,
