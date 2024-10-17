@@ -3,10 +3,22 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import { memo, Suspense, useEffect, useState } from 'react'
-import CanvasLoader from '../Loader'
+import Loader from '../Loader'
 
 const Computers = () => {
-  const computer = useGLTF('./desktop_pc/scene.gltf')
+  const computer = useGLTF('/desktop_pc/scene.gltf')
+  useEffect(() => {
+    return () => {
+      // Cleanup function to properly dispose of the WebGL context
+      const canvas = document.querySelector('canvas');
+      if (canvas) {
+        const gl = canvas.getContext('webgl');
+        if (gl) {
+          gl.getExtension('WEBGL_lose_context')?.loseContext();
+        }
+      }
+    };
+  }, []);
   return (
     <mesh>
       <hemisphereLight intensity={4} groundColor="black" />
@@ -21,7 +33,7 @@ const Computers = () => {
       />
       <primitive
         object={computer.scene}
-        scale={ 0.75}
+        scale={0.75}
         position={[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -29,6 +41,43 @@ const Computers = () => {
   )
 }
 
+
+const ComputerCanvas = memo(() => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width:500px)');
+    setIsMobile(mediaQuery.matches);
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
+
+  return (
+    <Canvas
+      frameloop="demand"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+    >
+      <Suspense fallback={<Loader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Computers isMobile={isMobile} />
+      </Suspense>
+      <Preload all />
+    </Canvas>
+  );
+});
+
+export default ComputerCanvas
 // const Computers = ({ isMobile }) => {
 //   let computer = null
 //   try {
@@ -60,41 +109,6 @@ const Computers = () => {
 //   )
 // }
 
-
-const ComputerCanvas = memo(() => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width:500px)');
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
-  }, []);
-
-  return (
-    <Canvas
-      frameLoop="demand"
-      shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
-  );
-});
 
 
 
@@ -137,4 +151,4 @@ const ComputerCanvas = memo(() => {
 //   )
 // }
 
-export default ComputerCanvas
+// export default ComputerCanvas

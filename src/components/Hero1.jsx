@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { styles } from '../style'
 import ComputerCanvas from './canvas/Computers'
-import { isWebGL2Available } from '@react-three/drei'
 
 const Hero = () => {
   return (
@@ -12,16 +11,17 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
         <div>
-          <h1 className={`${styles.heroHeadText} text-white `}>Hi, I&#39;m <span className='text-[#915eff]'>Karamat</span>  </h1>
+          <h1 className={`${styles.heroHeadText} text-white `}>Hi, I&apos;m <span className='text-[#915eff]'>Karamat</span>  </h1>
           <p>I can develop web Application,<br className='sm:block hidden' /> mobile application and ios application</p>
         </div>
       </div>
-      {isWebGL2Available ? <ComputerCanvas /> : <ComputerCanvas /> }
+      {/*<ComputerCanvas />*/}
+      <ComputerCanvas />
       <div className='absolute xs:bottom-[-5px] bottom-32 w-full flex justify-center items-center' >
         <a href='#about' >
           <div className='w-[30px] h-[61px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              // <motion.dev
+            
+              <motion.div
               animate={{
                 y: [0, 24, 0]
               }}
