@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
-import {  Suspense, useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import CanvasLoader from '../Loader'
 
 // const Computers = () => {
@@ -81,12 +81,7 @@ import CanvasLoader from '../Loader'
 
 
 const Computers = ({ isMobile }) => {
-  let computer = null
-  try {
-    computer = useGLTF('./desktop_pc/scene.gltf')
-  } catch (error) {
-    console.error("Error loading GLTF model:", error)
-  }
+  const computer = useGLTF('./desktop_pc/scene.gltf')
   if (!computer) return <CanvasLoader />; // Fallback if loading fails
 
   return (
