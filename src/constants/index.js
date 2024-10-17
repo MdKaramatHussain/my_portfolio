@@ -265,6 +265,6 @@ const projects = [
 export const projectSummary = "Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly describe with links to code repositories and live demons in it. It reflects my ability to solve complex problems, work with diffrent technologies, and manage projects effectively."
 export const publicKey = "mqJUG-zKHQEAQib09"
 export const templateKey = "template_oakda1l"
-export const serviceKey = "service_615fv3f"
+export const serviceKey = "service_615fv3f "
 
 export { services, technologies, experiences, testimonials, projects };
