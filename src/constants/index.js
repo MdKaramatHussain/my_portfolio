@@ -15,21 +15,16 @@ import {
   git,
   figma,
   docker,
-  // meta,
-  // starbucks,
-  // tesla,
-  // shopify,
+  meta,
+  starbucks,
+  tesla,
+  shopify,
   carrent,
   jobit,
   tripguide,
-  // threejs,
-  lmr,
-  microtechnologies,
-  jest,
-  mysql,
-  nextjs,
-  nestjs
+  threejs,
 } from "../assets";
+
 export const navLinks = [
   {
     id: "about",
@@ -59,7 +54,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Schema Design",
+    title: "Content Creator",
     icon: creator,
   },
 ];
@@ -102,105 +97,93 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "Next JS",
-    icon: nextjs,
+    name: "Three JS",
+    icon: threejs,
   },
-  // {
-  //   name: "git",
-  //   icon: git,
-  // },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
   {
     name: "docker",
     icon: docker,
-  },
-  {
-    name: "Jest",
-    icon: jest,
-  },
-  {
-    name: "MySQL",
-    icon: mysql,
-  },
-  {
-    name: "Nest JS",
-    icon: nestjs,
   },
 ];
 
 const experiences = [
   {
-    title: "Fullstack Developer",
-    company_name: "Micro Technologies",
-    icon: microtechnologies,
+    title: "React.js Developer",
+    company_name: "Starbucks",
+    icon: starbucks,
     iconBg: "#383E56",
-    date: "April 2023 - June 2024",
+    date: "March 2020 - April 2021",
     points: [
-      "Developed and maintained scalable RESTful APIs using NestJS and Express, TypeScript improving performance and efficiency across multiple microservices.",
-      "Wrote and executed comprehensive unit and integration tests using Jest, ensuring code quality and reducing production issues.",
-      "Designed and maintained APIs with Node.js, MySQL, and MongoDB.",
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
   {
-    title: "Backend Developer",
-    company_name: "lmrwebsolution",
-    icon: lmr,
+    title: "React Native Developer",
+    company_name: "Tesla",
+    icon: tesla,
     iconBg: "#E6DEDD",
-    date: "July 2024 - Present",
+    date: "Jan 2021 - Feb 2022",
     points: [
-      "Developed and maintained scalable RESTful APIs using NestJS and Express, TypeScript improving performance and efficiency across multiple microservices.",
-      "Formulated and Implemented Database schema.",
-      "Managed and optimized MongoDB databases, implementing complex queries, aggregations, and indexing for high-traffic applications.",
-      "Wrote and executed comprehensive unit and integration tests using Jest, ensuring code quality and reducing production issues.",
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  {
+    title: "Web Developer",
+    company_name: "Shopify",
+    icon: shopify,
+    iconBg: "#383E56",
+    date: "Jan 2022 - Jan 2023",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "Full stack Developer",
+    company_name: "Meta",
+    icon: meta,
+    iconBg: "#E6DEDD",
+    date: "Jan 2023 - Present",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
 ];
 
 const testimonials = [
   {
     testimonial:
       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Mr. Bhanu Semar",
-    designation: "CEO",
-    company: "Owlseye",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "Sara Lee",
+    designation: "CFO",
+    company: "Acme Co",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their work and honest for their commitment.",
-    name: "Mr Vinay Singh",
-    designation: "Founder Micro Technologies",
-    company: "Micro Technologies",
+      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    name: "Chris Brown",
+    designation: "COO",
+    company: "DEF Corp",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
@@ -215,13 +198,12 @@ const testimonials = [
 
 const projects = [
   {
-    name: "meta-pro-space",
+    name: "Car Rent",
     description:
-      // "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      "Meta-Pro.Space is an advanced decentralized platform offering lottery services. It enables users to participate in secure, blockchain-based lotteries with features like real-time transaction tracking, user registration, and comprehensive lottery management.",
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
       {
-        name: "nest",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
@@ -229,62 +211,50 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "node",
+        name: "tailwind",
         color: "pink-text-gradient",
-      },
-      {
-        name: "AWS(S3)",
-        color: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text',
       },
     ],
     image: carrent,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Owlseye",
+    name: "Job IT",
     description:
-      "owlseye is a form of Web-based platform that allows users to maintain their vehicle in a healthy condition, providing a convenient and efficient solution in a single tap for their vehicle.Owlseye deals with approx all type of vehicles and have a garage in multiple location.",
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "RESTAPIs",
+        name: "restapi",
         color: "green-text-gradient",
       },
       {
-        name: "MySQL",
+        name: "scss",
         color: "pink-text-gradient",
-      },
-      {
-        name: "AWS(S3, EC2)",
-        color: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text',
       },
     ],
     image: jobit,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Tp-Bazar",
+    name: "Trip Guide",
     description:
-      "Tp-Bazar It is a form of electronic commerce which allows consumers to directly buy goods or services from a seller over the Internet. It is a shopping system application that allows the user to shop online without going to the shop to buy them, this will help in saving  the energy, fuel and time. ",
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
       {
-        name: "Reactjs",
+        name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "React Native",
+        name: "supabase",
         color: "green-text-gradient",
       },
       {
-        name: "Docker",
+        name: "css",
         color: "pink-text-gradient",
-      },
-      {
-        name: "Redux",
-        color: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text',
       },
     ],
     image: tripguide,
@@ -295,6 +265,6 @@ const projects = [
 export const projectSummary = "Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly describe with links to code repositories and live demons in it. It reflects my ability to solve complex problems, work with diffrent technologies, and manage projects effectively."
 export const publicKey = "mqJUG-zKHQEAQib09"
 export const templateKey = "template_oakda1l"
-export const serviceKey = "service_615fv3f"
+export const serviceKey = "service_615fv3f "
 
 export { services, technologies, experiences, testimonials, projects };
