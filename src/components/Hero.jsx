@@ -14,6 +14,7 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white `}>Hi, I&#39;m <span className='text-[#915eff]'>Karamat</span>  </h1>
           <p>I can develop web Application,<br className='sm:block hidden' /> mobile application and ios application</p>
+          <p>I can bring your imagination<br className='sm:block hidden' /> into the world of technology<br className='sm:block hidden' />on your finger tap</p>
         </div>
       </div>
       {isWebGL2Available ? <ComputerCanvas /> : <ComputerCanvas /> }
