@@ -35,6 +35,7 @@ import microtechnologies from "./company/microTechnologies.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import meta_pro from './meta_pro.jpg';
 
 export {
   logo,
@@ -70,5 +71,6 @@ export {
   jest,
   mysql,
   nextjs,
-  nestjs
+  nestjs,
+  meta_pro,
 };

@@ -1,11 +1,11 @@
-import { color, motion } from 'framer-motion'
+import {  motion } from 'framer-motion'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { styles } from '../style'
 import { experiences } from '../constants'
 import SectionWrapper from '../hoc/SectionWrapper'
 import { textVariant } from '../utils/motion'
-import { text } from 'framer-motion/m'
+// import { text } from 'framer-motion/m'
 
 const ExperienceCard = ({ experience }) => {
   return (

@@ -28,7 +28,8 @@ import {
   jest,
   mysql,
   nextjs,
-  nestjs
+  nestjs,
+  meta_pro
 } from "../assets";
 export const navLinks = [
   {
@@ -101,18 +102,18 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  // {
-  //   name: "Next JS",
-  //   icon: nextjs,
-  // },
-  // {
-  //   name: "git",
-  //   icon: git,
-  // },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
+  {
+    name: "Next JS",
+    icon: nextjs,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
   {
     name: "docker",
     icon: docker,
@@ -199,16 +200,16 @@ const testimonials = [
     testimonial:
       "I've never met a web developer who truly cares about their work and honest for their commitment.",
     name: "Mr Vinay Singh",
-    designation: "Founder Micro Technologies",
+    designation: "CTO",
     company: "Micro Technologies",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+    name: "Iramnaz Khan",
     designation: "CTO",
-    company: "456 Enterprises",
+    company: "Micro Technology",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
@@ -237,7 +238,7 @@ const projects = [
         color: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text',
       },
     ],
-    image: carrent,
+    image: meta_pro,
     source_code_link: "https://github.com/",
   },
   {
